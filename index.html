@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Overview on Prototype and constructor</title>
+        <!-- HTML5 shim for IE8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+      <script src=“https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js”></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Header -->
+<header>
+<h1> Overview on Prototype and Constructor  </h1>
+</header>
+<!-- main section -->
+<main id="mainSection">
+<section id="subSection">
+<p id="output"></p>
+</section>
+</main>
+<!-- javascript starts here -->
+<script type="text/javascript">
+//declaring a constructor pattern for employee with fucntions
+function Employee(uName, skills, basicSalary) {
+    this.userName = uName;
+    this.skillSet = skills;
+    this.Salary = basicSalary;	
+this.printDetails = function(){
+return this.userName+"   "+this.skillSet+"  "+this.Salary;
+}
+this.changeSalary=function(amt){
+this.Salary=amt;
+} 
+}
+// instantiating a employee constructor with values
+var emp1=new Employee("Raghavan","Mainframes",30000);
+document.writeln("employee details before an update in the salary<br>");
+document.writeln(emp1.printDetails());
+document.writeln("<br>");
+document.writeln("employee details after an update in the salary<br>");
+// calling the changeSalary by passing the salary parameter to update
+emp1.changeSalary(40000);
+document.writeln(emp1.printDetails());
+
+</script>
+<!-- javascript ends here -->
+</body>
+</html>
